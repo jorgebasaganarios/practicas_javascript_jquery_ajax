@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function muestra(){
+			switch (form1.desplegable.value){
+				case 'foto1': document.getElementById("foto").src = "1.jpg";
+								break;
+				case 'foto2': document.getElementById("foto").src = "2.jpg";
+								break;
+				case 'foto3': document.getElementById("foto").src = "3.jpg";
+								break;
+			}
+		}
+	</script>
+	<title>Cambiar foto</title>
+</head>
+<body>
+<!--Formulario simple -->
+	<form name="form1">
+		<br>
+		<select name="desplegable">
+			<option value="foto1">foto1</option>
+			<option value="foto2">foto2</option>
+			<option value="foto3">foto3</option>
+		</select>
+		<input type="button" name="but2" onclick="muestra()" value="Cambiame la foto.">
+		
+	</form>
+	<br/>
+	<img id="foto" src="1.jpg" width="150">
+	<!-- Link -->
+	<br />
+</body>
+</html>

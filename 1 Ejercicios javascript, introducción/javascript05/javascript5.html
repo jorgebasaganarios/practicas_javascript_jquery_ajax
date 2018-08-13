@@ -1,0 +1,258 @@
+<html>
+<head>
+</head>
+<body> 
+<script language="javascript">
+
+
+/*
+//V1 - Ej 1
+
+var nota1=prompt('Ingrese la nota 1: ');
+document.write('<br>');
+document.write('Nota 1 introducida: '+num1);
+var nota2=prompt('Ingrese la nota 2: ');
+document.write('<br>');
+document.write('Nota 2 introducida: '+num2);
+var nota3=prompt('Ingrese la nota 3: ');
+document.write('<br>');
+document.write('Nota 3 introducida: '+num3);
+document.write('<br>');
+var oper = (parseInt(nota1)+parseInt(nota2)+parseInt(nota3))/3;
+
+if(oper>=7)
+{
+	document.write('Promocionado');
+}
+*/
+
+
+/*
+//V1 - Ej2
+
+var clave1=prompt('Ingrese la clave: ','');
+var clave2=prompt('Vuelva a ingresar la clave: ','');
+
+if(calve1 == clave2){
+	document.write('Las claves son iguales');
+
+}
+*/
+
+
+/*
+//V2 - Ej 1
+
+var num1=prompt('Ingrese el número 1: ','');
+document.write('<br>');
+document.write('Primer número introducido: '+num1);
+document.write('<br>');
+var num2=prompt('Ingrese el número 2: ','');
+document.write('<br>');
+document.write('Segundo número introducido: '+num2);
+document.write('<br>');
+
+if(num1>num2)
+{
+	var suma=parseInt(num1)+parseInt(num2);
+	var resta=parseInt(num1)-parseInt(num2);
+	document.write('La suma es: '+suma);
+	document.write('<br>');
+	document.write('La suma es: '+resta);
+}
+else
+{
+	var multiplicacion=parseInt(num1)*parseInt(num2);
+	var division=parseInt(num1)/parseInt(num2);
+	document.write('La multiplicación es: '+multiplicacion);
+	document.write('<br>');
+	document.write('La división es: '+division);
+}
+
+
+//V2 - Ej 2
+
+var nota1=prompt('Ingrese la nota 1: ');
+document.write('<br>');
+document.write('Nota 1 introducida: '+num1);
+var nota2=prompt('Ingrese la nota 2: ');
+document.write('<br>');
+document.write('Nota 2 introducida: '+num2);
+var nota3=prompt('Ingrese la nota 3: ');
+document.write('<br>');
+document.write('Nota 3 introducida: '+num3);
+document.write('<br>');
+var oper = (parseInt(nota1)+parseInt(nota2)+parseInt(nota3))/3;
+
+if(oper>=4)
+{
+	document.write('La nota es: regular');
+}
+else
+{
+	document.write('La nota es: aprobado');
+}
+
+*/
+
+/*
+//v2 - Ej 3
+
+var num1=prompt('Ingrese un número positivo: ','');
+document.write('<br>');
+document.write('Número introducido: '+num1);
+document.write('<br>');
+var resultado=parseInt(num1);
+document.write('Coste total del pedido: '+total);
+*/
+
+/*
+//V3 - Ej1
+var mayor=0;
+var num1=prompt('Ingrese número 1: ');
+document.write('<br>');
+document.write('Número 1 introducido: '+parseInt(num1));
+var num2=prompt('Ingrese número 2: ');
+document.write('<br>');
+document.write('Número 2 introducido: '+parseInt(num2));
+var num3=prompt('Ingrese número 3: ');
+document.write('<br>');
+document.write('Número 3 introducido: '+parseInt(num3));
+document.write('<br>');
+
+if(num1>num2)
+{
+	if(num1>num3)
+	{
+	mayor=num1;
+	}
+}
+
+if(num2>num1)
+{
+	if(num2>num3)
+	{
+	mayor=num2;
+	}
+}
+
+if(num3>num1)
+{
+	if(num3>num2)
+	{
+	mayor=num3;
+	}
+}
+
+document.write('El número mayor es: '+mayor);
+*/
+
+/*
+//V3 - Ej2
+
+var num=prompt('Ingrese número: ');
+document.write('<br>');
+document.write('Número introducido: '+parseInt(num));
+document.write('<br>');
+
+if(num<0)
+{
+	document.write('Menor que 0.');
+	if(num==0)
+	{
+		document.write('Igual a 0.');
+		if(num>0)
+		{
+			document.write('Mayor a 0.');
+		}
+	}
+}
+*/
+
+/*
+//V3 - Ej3
+
+var num=prompt('Ingrese número: ');
+document.write('<br>');
+document.write('Número introducido: '+parseInt(num));
+document.write('<br>');
+
+if(num<10)
+{
+	document.write('El número '+num+' tiene 1 cifra.');
+}
+
+if(num<100)
+{
+	if(num>9)
+	document.write('El número '+num+' tiene 2 cifras.');
+}
+
+if(num<1000)
+{
+	if(num>99)
+	{
+		document.write('El número '+num+' tiene 3 cifras.');
+	}
+}
+*/
+
+//V3 - Ej 4
+
+var nombre=prompt('Ingrese el nombre: ','');
+document.write('<br>');
+document.write('Nombre del usuario: '+nombre);
+
+var cant_preg=prompt('Ingrese el número de preguntas hechas: ','');
+document.write('<br>');
+document.write('Número de preguntas: '+cant_preg);
+
+var resp_corr=prompt('Ingrese el número de preguntas acertadas: ','');
+document.write('<br>');
+document.write('Número de preguntas: '+resp_corr);
+
+if(resp_corr<50)
+{
+	document.write('Fuera de nivel.');
+	document.write('<br>');
+}
+if(resp_corr>=50)
+{
+	if(resp_corr<75)
+	{
+		document.write('Nivel regular.')
+		document.write('<br>');
+	}
+}
+if(resp_corr>=75)
+{
+	if(resp_corr<90)
+	{
+		document.write('Nivel Medio.')
+		document.write('<br>');
+	}
+}
+
+if(resp_corr>=90)
+{
+	document.write('Nivel superior.')
+	document.write('<br>');
+}
+
+/*
+
+n1>n2
+	n1>n3
+	else
+
+	n2>n3
+
+	else mayor=n3
+
+*/
+
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="mostrarcabecera">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Ejercicios JQuery</title>
+	<script type="text/javascript" src="jquery1.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+		.news
+		{
+			  font-size: 15px;
+		}
+
+		.recuadro {
+		  background-color:#ffffcc;
+		  font-family:verdana;
+		  font-size:14px;
+
+		  border-top-width:1px;
+		  border-right-width:3px;
+		  border-bottom-width:3px;
+		  border-left-width:1px;
+
+		  border-top-style:dotted;
+		  border-right-style:solid;
+		  border-bottom-style:solid;
+		  border-left-style:dotted;
+
+		  border-top-color:#ffaa00;
+		  border-right-color:#ff0000;
+		  border-bottom-color:#ff0000;
+		  border-left-color:#ffaa00;
+		}
+
+	</style>
+</head>
+<body>
+
+<!-- Ejemplo <input type="button" name="boton" id="boton1" value="Botón"/> -->
+
+<!-- Ejemplo <input type="button" id="boton1" value="presioname"> -->
+
+<!-- Ej hoja 2 <p id="p1"> 
+
+Hola qué tal cómo estás yo bien gracias y tú muy bien gracias también. Hola qué tal cómo estás yo bien gracias y tú muy bien gracias también. Hola qué tal cómo estás yo bien gracias y tú muy bien gracias también. Hola qué tal cómo estás yo bien gracias y tú muy bien gracias también. 
+
+</p>
+
+<p id="p2"> 
+
+Hola qué tal cómo estás yo bien gracias y tú muy bien gracias también. Hola qué tal cómo estás yo bien gracias y tú muy bien gracias también. Hola qué tal cómo estás yo bien gracias y tú muy bien gracias también. Hola qué tal cómo estás yo bien gracias y tú muy bien gracias también. 
+
+</p> -->
+
+<!-- EJ4 
+<h1 id="titulo1">Primer título</h1>
+<h1 id="titulo2">Segundo título</h1>
+-->
+
+<!-- Ej hoja 3
+
+<table>
+	  <tr>
+		  <td>hola</td>
+		  <td>hola</td>
+		  <td>hola</td>
+		  <td>hola</td>
+	  </tr>
+
+	  <tr>
+		  <td>hola</td>
+		  <td>hola</td>
+		  <td>hola</td>
+		  <td>hola</td>
+	  </tr>
+</table>
+
+-->
+
+<!-- Ej hoja 4
+
+<ul>
+<li>Hola</li>
+<li>que</li>
+<li>tal</li>
+<li>estas</li>
+</ul>
+
+-->
+
+<!-- Ej hoja 5
+
+<table>
+	  <tr>
+		  <td id="id1">hola</td>
+		  <td id="id2">hola</td>
+		  <td id="id3">hola</td>
+	  </tr>
+
+	  <tr>
+		  <td id="id4">hola</td>
+		  <td id="id5">hola</td>
+		  <td id="id6">hola</td>
+	  </tr>
+</table>
+
+<table>
+	  <tr>
+		  <td id="id7">hola</td>
+		  <td id="id8">hola</td>
+		  <td id="id9">hola</td>
+	  </tr>
+
+	  <tr>
+		  <td id="id10">hola</td>
+		  <td id="id11">hola</td>
+		  <td id="id12">hola</td>
+	  </tr>
+</table>
+
+-->
+
+<!-- Ejercicio 6
+
+<h1>Titulo de noticia</h1>
+<p class="news">Descripción completa de la noticia.</p>
+
+<input type="button" id="boton1" value="Botón"/>
+
+-->
+
+<!-- Ejercicio 7
+
+<input type="button" value="Modificar el texto de los elementos 
+td de una tabla" id="boton"><br>
+
+<p id="parrafo1">-</p>
+
+<table border="1">
+	  <tr>
+		  <td class="tabla1">hola</td>
+		  <td class="tabla1">que tal?</td>
+		  <td class="tabla1">Como estas?</td>
+	  </tr>
+
+	  <tr>
+		  <td class="tabla1">Yo bien</td>
+		  <td class="tabla1">me alegro</td>
+		  <td class="tabla1">gracias</td>
+	  </tr>
+
+	  <tr>
+		  <td class="tabla1">de nada</td>
+		  <td class="tabla1">bueno pues venga chao</td>
+		  <td class="tabla1">adios adios</td>
+	  </tr>
+</table>
+
+<table border="1">
+	  <tr>
+		  <td class="tabla2">hola</td>
+		  <td class="tabla2">que tal?</td>
+		  <td class="tabla2">Como estas?</td>
+	  </tr>
+
+	  <tr>
+		  <td class="tabla2">Yo bien</td>
+		  <td class="tabla2">me alegro</td>
+		  <td class="tabla2">gracias</td>
+	  </tr>
+
+	  <tr>
+		  <td class="tabla2">de nada</td>
+		  <td class="tabla2">bueno pues venga chao</td>
+		  <td class="tabla2">adios adios</td>
+	  </tr>
+</table>
+
+-->
+
+<!-- Ejercicio 8
+
+<input type="button" id="boton1" value="Establecer enlace Gastroidea.com"><br>
+<input type="button" id="boton2" value="Establecer enlace Facebook.com"><br>
+<input type="button" id="boton3" value="Establecer enlace Twitter.com">
+
+<br><br> <a href="" id="enlaces">Hipervínculo</a>
+
+-->
+
+<!-- Ejercicio 9
+
+HEAD:<br>
+<input type="button" id="boton1" value="Asociar clase">
+<input type="button" id="boton2" value="Desasociar clase">
+<br><br>
+BODY:<br>
+<input type="button" id="boton3" value="Asociar clase">
+<input type="button" id="boton4" value="Desasociar clase">
+
+<br><br>
+
+<table border="1">
+        <thead id="cabecera">
+            <tr>
+                <td>hola</td>
+		  		<td>que tal?</td>
+		  		<td>Como estas?</td>
+            </tr>
+        </thead>
+
+        <tbody id="cuerpo">
+            <tr>
+                <td>Yo bien</td>
+		  		<td>me alegro</td>
+		  		<td>gracias</td>
+            </tr>
+            <tr>
+                <td>de nada</td>
+		  		<td>bueno pues venga chao</td>
+		  		<td>adios adios</td>
+            </tr>
+        </tbody>
+</table>
+
+-->
+
+<!-- Ejercicio 10
+
+<body>
+<input type="button" id="boton1" value="Mostrar cabecera">
+<input type="button" id="boton2" value="Mostrar cuerpo"><br>
+<div id="formulario">
+</div>
+
+-->
+
+<!-- Ejercicio 11
+
+<p>Párrafo fuera de la tabla</p>
+
+<table border="1">
+<tr>
+<td><p>Párrafo dentro de la primer tabla.</p></td><td><p>Párrafo 
+dentro de la primer tabla.</p></td>
+</tr>
+</table>
+<br>
+<table border="1" id="tabla2">
+<tr>
+<td><p>Párrafo dentro de la segunda tabla.</p></td><td><p>Párrafo 
+dentro de la segunda tabla.</p></td>
+</tr>
+</table>
+
+-->
+
+</body>
+</html>

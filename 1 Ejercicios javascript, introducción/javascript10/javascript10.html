@@ -1,0 +1,211 @@
+<html>
+<head>
+</head>
+<body> 
+<script language="javascript">
+
+/*
+//Ej 1 V1
+
+var num = 0;
+var contador=0;
+while(contador<25)
+{
+	num=num+11;
+	document.write(num);
+	document.write('<br>');
+	contador++;
+}
+*/
+
+/*
+//Ej 2 V1
+
+var num = 0;
+while(num<500)
+{
+		num=num+8;
+		if(num<=500){
+			document.write(num);
+			document.write('<br>');
+		}
+}
+*/
+
+/*
+//Ej 1 V1
+
+var notas = 0;
+var nota;
+var malanota = 0;
+var buenanota = 0;
+while(notas<10)
+{
+	nota = prompt('Ingrese una nota: ','');
+	document.write('-Nota: '+nota);
+	document.write('<br>');
+	nota=parseInt(nota);
+	if(nota<7)
+	{
+		malanota++;
+	}else{
+		buenanota++;
+	}
+	notas++;
+}
+
+document.write("Notas menores a 7: "+malanota);
+document.write('<br>');
+document.write("Notas mayores a 7: "+buenanota);
+document.write('<br>');
+*/
+
+/*
+//Ej 2 V2
+
+var alturas=0;
+var altura=0;
+var promedio=0;
+var suma=0;
+while(alturas<5)
+{
+	altura=prompt('Ingrese una altura: ','');
+	altura=parseInt(altura);
+	suma = suma + altura;
+	document.write('-Altura: '+altura);
+	document.write('<br>');
+	alturas++;
+}
+promedio = suma / alturas;
+document.write("Promedio alturas: "+promedio);
+document.write('<br>');
+*/
+
+/*
+//Ej 3 V2
+
+var sueldo=0;
+var empleados=0;
+var malsueldo = 0;
+var buensueldo = 0;
+var total_malsueldo=0;
+var total_buensueldo=0;
+var total_final=0;
+while(empleados<5)
+{
+	sueldo=prompt('Ingrese un sueldo: ','');
+	sueldo=parseInt(sueldo);
+	document.write('-Sueldo: '+sueldo);
+	document.write('<br>');
+
+	if(sueldo>=100 && sueldo<300)
+	{
+		malsueldo++;
+		total_malsueldo = total_malsueldo + sueldo;
+	} else if(sueldo>=300 && sueldo<500){
+		buensueldo++;
+		total_buensueldo = total_buensueldo + sueldo;
+	} else{
+		document.write("Sueldo incorrecto");
+	}
+
+	empleados++;
+}
+
+total_final=total_malsueldo+total_buensueldo;
+
+document.write("Empleados con buen sueldo: "+buensueldo);
+document.write('<br>');
+document.write("Empleados con mal sueldo: "+malsueldo);
+document.write('<br>');
+document.write("La empresa gasta en buenos sueldos: "+total_final);
+document.write('<br>');
+*/
+
+/*
+//Ej 4 V2
+
+var num = 0;
+var contador=0;
+while(contador<20)
+{
+	num=num+5;
+	document.write(num);
+	document.write('<br>');
+	contador++;
+}
+*/
+
+/*
+//Ej 5 V1
+
+var num = 0;
+while(num<=1500)
+{
+	num=num+10;
+	if(num<=1500){
+	document.write(num);
+	document.write('<br>');
+	}
+}
+*/
+
+/*
+//Ej 6 V1
+
+var lista1 = 0;
+var lista2 = 0;
+var total1=0;
+var total2=0;
+
+while(lista1<3)
+{
+	valor1=prompt('Insertar valores de lista 1: ', '');
+	valor1=parseInt(valor1);
+	total1=total1+valor1;
+	lista1++;
+}
+
+while(lista2<3)
+{
+	valor2=prompt('Insertar valores de lista 2: ', '');
+	valor2=parseInt(valor2);
+	total2=total2+valor2;
+	lista2++;
+}
+
+if(total1>total2)
+{
+	document.write("Lista 1 mayor.");
+}else{
+	document.write("Lista 2 mayor.");
+}
+*/
+
+//Ej 7 V1
+
+var num = 0;
+var pares=0;
+var impares=0;
+var contador=0;
+while(contador<5)
+{
+	num=prompt('Insertar valores: ', '');
+	num=parseInt(num);
+	if(num%2==0)
+	{
+		pares++;
+	}else{
+		impares++;
+	}
+	contador++;
+}
+
+document.write("Números pares: " + pares);
+document.write('<br>');
+document.write("Números impares: " + impares);
+document.write('<br>');
+
+</script>
+</body>
+</html>

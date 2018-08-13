@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Discos</title>
+<script type="text/javascript">
+
+	var discos = [];
+
+	function crearDisco(){
+
+		var nombre=document.form1.nombre1.value;
+		var grupo =document.form1.grupo2.value;
+		var fecha=document.form1.fecha3.value;
+		var tipo=document.form1.tipo4.value;
+		var localizacion=document.form1.localizacion5.value;
+		var prestado=document.form1.prestado6.value;
+
+		disco = new Disco();
+		disco.crearDisco(nombre, grupo, fecha, tipo, localizacion, prestado);
+		discos.push(disco);
+		form1.reset();
+	}
+
+	function Disco(nombre, grupo, fecha, tipo, localizacion, prestado){
+
+		this.nombre = "";
+		this.grupo = "";
+		this.fecha = "";
+		this.tipo = "";
+		this.localizacion = 0;
+		this.prestado = false;
+		this.discos = [];
+
+		this.crearDisco=function(nombre, grupo, fecha, tipo, localizacion, prestado){
+			this.nombre = nombre;
+			this.grupo = grupo;
+			this.fecha = fecha;
+			this.tipo = tipo;
+			this.localizacion = 0;
+			this.prestado = false;
+		}
+	}
+
+	function imprimirDiscos(){
+		for(var i=0; i<discos.length; i++){
+				document.write(discos[i].nombre + " / " + discos[i].grupo + "<br>");
+		}
+	}
+
+</script>
+</head>
+<body>
+<form name="form1">
+   <label for="label1">NOMBRE:</label>
+   </br> <input id="label1" type="text" name="nombre1"/> </br></br>
+   <label for="label2">GRUPO:</label>
+   </br> <input id="label2" type="text" name="grupo2"/> </br></br>
+   <label for="label3">FECHA DE PUBLICACIÓN:</label>
+   </br> <input id="label3" type="text" name="fecha3"/> </br></br>
+   <label for="label4">TIPO DE MÚSICA:</label>
+   </br> 
+   <select id="label4" name="tipo4">
+		<option value="opcion1">Rock</option>
+		<option value="opcion2">Pop</option>
+		<option value="opcion3">Punk</option>
+		<option value="opcion4">Indie</option>
+	</select>
+   </br></br>
+   <label for="label5">LOCALIZACIÓN:</label>
+   </br> <input id="label5" type="text" name="localizacion5"/> </br></br>
+   <label for="label6">PRESTADO:</label>
+   </br> 
+   <input id="label6" type="checkbox" name="prestado6"/>
+   <p>
+		<input type="button" name="oper1" onclick="crearDisco()" value="Crear disco"/>
+		<input type="button" name="oper2" onclick="imprimirDiscos()" value="Mostrar discos"/>
+   </p>
+</form>
+</body>
+</html>

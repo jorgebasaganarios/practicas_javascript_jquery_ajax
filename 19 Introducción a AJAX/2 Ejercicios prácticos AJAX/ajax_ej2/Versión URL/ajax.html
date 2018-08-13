@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR /xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <title>Hola Mundo 2 - carga URL</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" language="javascript">
+
+
+        var READY_STATE_UNINITIALIZED = 0;
+        var READY_STATE_LOADING = 1;
+        var READY_STATE_LOADED = 2;
+        var READY_STATE_INTERACTIVE = 3;
+        var READY_STATE_COMPLETE = 4;
+        var peticion_http;
+
+        function cargaContenido(url, metodo, funcion) {
+            peticion_http = inicializa_xhr();
+            if (peticion_http) {
+                peticion_http.onreadystatechange = funcion;
+                peticion_http.open(metodo, url, true);
+                peticion_http.send(null);
+            }
+        }
+
+        function inicializa_xhr() {
+            if (window.XMLHttpRequest) {
+                return new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                return new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+
+        function muestraContenido() {
+            if (peticion_http.readyState == READY_STATE_COMPLETE) {
+                if (peticion_http.status == 200) {
+                    var content = peticion_http.responseText;
+                    document.getElementById('textarea1').value = content;
+                }
+            }
+        }
+
+        function descargaArchivo() {
+            cargaContenido("http://localhost/ajax_ej2/holamundo.txt", "GET", muestraContenido);
+        }
+
+
+        //window.onload = descargaArchivo;
+
+
+        /*Crea un campo de texto en el que, nada más cargarse la página, se cargue la url de la misma (ver Unidad 3).*/
+
+        /*function guardarURL(){
+            //alert(window.location);
+            var direccion = window.location;
+            document.getElementById('textarea1').value = direccion;
+        }
+
+        window.onload = guardarURL;*/
+
+
+        /*Crea un botón junto al campo de texto que se llame “Mostrar contenido” y que al hacer clic sobre él cargue en un textarea el contenido indicado en la url.*/
+
+        function mostrarURL(){
+            var botonMostrar = document.getElementById('boton1');
+            botonMostrar.addEventListener('click', guardarURL);
+        }
+
+        function guardarURL(){
+            var direccion = window.location;
+            document.getElementById('textarea1').value = direccion;
+        }
+
+        window.onload = mostrarURL;
+
+    </script>
+
+</head>
+
+<body>    
+    <form name="form1">
+        <textarea id="textarea1" rows="10" cols="100" disabled="disabled"></textarea>
+        <br>
+        <input id="boton1" type="button" value="Cargar contenido">
+    </form>
+</body>
+
+</html>

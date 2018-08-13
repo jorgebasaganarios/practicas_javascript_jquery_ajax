@@ -1,0 +1,25 @@
+[
+	{
+		"nombre": "admin",
+		"pwd": "1234"
+		
+	},
+	{
+		"nombre": "manu",
+		"pwd": "0000"
+		
+	},
+	{
+		"nombre": "alexis",
+		"pwd": "1111"
+		
+	},
+	{
+		"nombre": "jorge",
+		"pwd": "2222"
+	},
+	{
+		"nombre": "moderador",
+		"pwd": "5555"
+	}
+]

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Discos</title>
+
+<script type="text/javascript" src="jquery1.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+
+<style type="text/css">
+
+		.recuadro {
+			border-style: solid;
+			border-color: red;
+    		border-width: 5px;
+		}
+
+		.labelcolor {
+			color: red;
+		}
+
+</style>
+
+<script type="text/javascript">
+
+	/*
+
+		EJERCICIO: u5e3_formulario2:
+		• A partir del formulario creado en la actividad 1, realiza las funciones necesarias.
+		para validarlo teniendo en cuenta:
+		• Nombre del disco: 20 caracteres, obligatorio.
+		• Grupo de música o cantante: 20 caracteres, obligatorio.
+		• Año de publicación: 4 caracteres numéricos.
+		• Tipo de música (podrá ser “rock”, “pop”, “punk” o “indie”): sin comprobación.
+		• Localización: almacenará un número de estantería: vacío o numérico.
+		• Prestado: sin comprobación.
+		• Tendrás que tener en cuenta, además:
+		• Que utilizarás un método window.onload.
+		• Que la validación se asignará al formulario mediante un AddEventListener.
+		• Que los campos nombre del disco y grupo de música se validarán en la misma función (campo20).
+
+		Modifica las funciones de tal manera que, en caso de que se produzca un
+		error en la validación, el campo implicado tenga el reborde rojo, y la etiqueta.
+		que lo acompaña también aparezca de color rojo.
+		• Para ello deberás crear las clases css necesarias (puedes incluirlas en el
+		propio html si lo deseas) para que se visualice correctamente.
+		• Ten en cuenta que si el usuario mete correctamente el nombre, deberá volver
+		a su color habitual.
+
+	*/
+
+</script>
+</head>
+<body>
+<form name="form1">
+   <label for="label1" id="label1-">NOMBRE:</label>
+   </br> <input id="label1" type="text" name="label1"/> </br></br>
+   <label for="label2" id="label2-">GRUPO:</label>
+   </br> <input id="label2" type="text" name="grupo2"/> </br></br>
+   <label for="label3" id="label3-">FECHA DE PUBLICACIÓN:</label>
+   </br> <input id="label3" type="text" name="fecha3"/> </br></br>
+   <label for="label4">TIPO DE MÚSICA:</label>
+   </br> 
+   <select id="label4" name="tipo4">
+		<option value="opcion1">Rock</option>
+		<option value="opcion2">Pop</option>
+		<option value="opcion3">Punk</option>
+		<option value="opcion4">Indie</option>
+	</select>
+   </br></br>
+   <label for="label5" id="label5-lab">LOCALIZACIÓN:</label>
+   </br> <input id="label5" type="text" name="localizacion5"/> </br></br>
+   <label for="label6">PRESTADO:</label>
+   </br> 
+   <input id="label6" type="checkbox" name="prestado6"/>
+   <p>
+		<input type="button" name="oper1" id="boton1" value="Crear disco"/>
+   </p>
+</form>
+</body>
+</html>

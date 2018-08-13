@@ -1,0 +1,32 @@
+#menu {
+  font-family: Arial;
+  margin:5px;
+}
+
+#menu p {
+  margin:0px;
+  padding:0px;
+}
+
+#menu a {
+  display: block;
+  padding: 3px;
+  width: 160px;
+  background-color: #f7f8e8;
+  border-bottom: 1px solid #eee;
+  text-align:center;
+}
+
+#menu a:link, #menu a:visited {
+  color: #f00;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  background-color: #369;
+  color: #fff;
+}
+
+#imagen {
+  float: left;
+}

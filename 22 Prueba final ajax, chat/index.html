@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>AJAX - JSON Array</title>
+	<script type="text/javascript" src="funciones.js"></script>
+
+	<style type="text/css">
+
+	#info{
+		overflow-x: auto;
+		width: 350px;
+		height: 400px;
+		border-style: dotted;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	#form{
+		padding-top: 10px;
+		text-align: center;
+	}
+
+	</style>
+
+</head>
+<body onload="ajax_get_json()">
+	
+	<div>
+		
+		<div id="info">
+
+		</div>
+
+		<div id="form">
+			<form action="send.php">
+			Nombre: <input type="text" name="nombre" value=""><br><br>
+			Mensaje: <input type="text" name="mensaje" value=""><br><br>
+			<input type="submit" value="Aceptar">
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>

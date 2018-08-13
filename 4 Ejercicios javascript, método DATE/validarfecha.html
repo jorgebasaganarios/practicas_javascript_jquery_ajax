@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Validar fecha</title>
+
+</head>
+<body>
+<script language="javascript">
+
+var dia = prompt('Introduce un día: ', '');
+var mes = prompt('Introduce un mes: ', '');
+var any = prompt('Introduce un año: ', '');
+var diaValidado = false;
+var bisiesto = false;
+
+var mes31 = [1, 3, 5, 7, 8, 10, 12];
+var mes30 = [4, 6, 9, 11];
+
+for(var i=0; i<mes31.length;i++){
+	if(mes == mes31[i]){
+		if(dia>0 && dia<=31)
+		{
+			document.write("Mes largo. Día correcto. ");
+			diaValidado = true;
+		}else{
+			document.write("Error al definir el día. ");
+		}
+	}
+	if(mes == mes30[i]){
+		if(dia>0 && dia<=30)
+		{
+			document.write("Mes corto. Día correcto. ");
+			diaValidado = true;
+		}else{
+			document.write("Error al definir el día. ");
+		}
+	}	
+}
+
+if(any%4==0 || (any%400==0 && any%100!=0)){
+	bisiesto = true;
+}
+
+if(mes == 2){
+	if(bisiesto == true){
+	document.write("Es Febrero y año bisiesto. ");
+	}else{
+	document.write("Es Febrero y año no bisiesto. ");
+	}
+}else{
+	if(bisiesto == true){
+		document.write("Año bisiesto. ");
+	}else{
+		document.write("Año no bisiesto. ");
+	}
+}
+
+</script>
+</body>
+</html>

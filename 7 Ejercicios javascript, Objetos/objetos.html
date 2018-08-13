@@ -1,0 +1,100 @@
+<!-- Pràctica OBJETOS, Jorge Basagaña Rios -->
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+
+/*var nombre = prompt("Introduce un nombre de disco: ");
+var grupo=prompt("Indica el grupo del disco: ");
+var any=prompt("Indica el año del disco: ");
+var tipo=prompt("Indica el tipo de disco: ");
+var localizacion=parseInt(prompt("Indica localización del disco: ", ""));
+var prestado=prompt("¿Está prestado o no?: ");*/
+
+var disco1 = new Disco();
+var disco2 = new Disco();
+disco1.nuevo("Supernatural", "Carlos Santana", 1982, "Rock", 2, true);
+disco2.nuevo("Greatest Hits", "M. Jackson", 1982, "Pop", 24, true);
+
+var discos = [];
+discos.push(disco1, disco2);
+disco1.imprimir();
+//disco2.imprimir();
+
+var opciones = parseInt(prompt("Elige opciones: \n 1.-Cambiar localización. \n 2.-Cambiar estado. \n 3.-Incluir propiedades."));
+
+switch(opciones){
+		case 1: disco1.cambLoc(prompt("Indica localización del disco:"));
+		break;
+		case 2: disco1.cambPrestado(prompt("¿Está prestado o no?: "));
+		break;
+		case 3: var nombre = prompt("Introduce un nombre de disco: ");
+				var grupo=prompt("Indica el grupo del disco: ");
+				var any=prompt("Indica el año del disco: ");
+				var tipo=prompt("Indica el tipo de disco: ");
+				var localizacion=parseInt(prompt("Indica localización del disco: ", ""));
+				disco1.nuevasProp(nombre, grupo, any, tipo, localizacion);
+		break;
+		case 4: disco1.cambPrestado(prompt("¿Está prestado o no?: "));
+		break;
+		default: document.write("Opcion incorrecta");
+		break;		
+}
+
+disco1.imprimir();
+
+function Disco(){
+
+	this.nombre = "";
+	this.grupo = "";
+	this.any = "";
+	this.tipo = "";
+	this.localizacion = 0;
+	this.prestado = false;
+}
+
+function Disco(nombre, grupo, any, tipo, localizacion, prestado){
+
+	this.nombre = "";
+	this.grupo = "";
+	this.any = 0;
+	this.tipo = "";
+	this.localizacion = 0;
+	this.prestado = false;
+
+	this.nuevo=function(nombre, grupo, any, tipo, localizacion, prestado){
+		this.nombre=nombre;
+		this.grupo=grupo;
+		this.any=any;
+		this.tipo=tipo;
+		this.localizacion=localizacion;
+		this.prestado=prestado;
+	}
+
+	this.nuevasProp=function(nombre, grupo, any, tipo, localizacion){
+		this.nombre=nombre;
+		this.grupo=grupo;
+		this.tipo=tipo;
+		this.localizacion=localizacion;
+		this.prestado=false;
+	}
+
+	this.cambLoc=function(localizacion){
+		this.localizacion = localizacion;
+	}
+
+	this.cambPrestado=function(prestado){
+		this.prestado = prestado;
+	}
+
+	this.imprimir=function(){
+		document.write("-Nombre disco: "+this.nombre+" / Autor: "+this.grupo+" / Año: "+this.any+" / Tipo: "+this.tipo+" / Localizacion: "+this.localizacion+" / Prestado: "+this.prestado+"<br><br>");
+	}
+}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Examen</title>
+
+</head>
+<body>
+<script language="javascript">
+
+/*
+	Fes un programa ex3.html que:
+		1. Et demani una data (dia, mes i any) i comprovi que la data es correcta (te els dies entre 1 i el màxim del mes.).
+		Fins que la data no sigui correcta, no et deixarà continuar.
+		1.1 T’informarà del dia de la setmana en que va caure la data.
+
+		2. Després et demanarà una altra data i després de comprovar que es correcta, haurà de comprovar que la data es posterior a la primera. Sinó es així te l’ha de tornar a preguntar.
+		2.1 T’informarà del dia de la setmana en que va caure la segona data.
+
+		3. Després et dirà el numero de dies transcorreguts entre la primera data i la segona.
+*/
+
+//Función que comprueba si es año bisiesto o no.
+
+function anyBisiesto(any){
+	if(any%4==0 || (any%400==0 && any%100!=0)){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+//Función que valida los días introducidos, ya sea 31, 30, 29 o 28.
+
+function validarMes(mes){
+
+	var validarMes = false;
+	for(var i=0; i<mes31.length;i++){
+		if(mes == mes31[i]){
+				mes31Valido = true;
+				validarMes = true;
+				return validarMes;
+		}
+		if(mes == mes30[i]){
+				mes30Valido = true;
+				validarMes = true;
+				return validarMes;
+		}
+		if(mes == 2 && anyBisiesto(any) && dia>0 && dia<=29){
+			validarMes = true;
+			return validarMes;
+		}
+		if(mes == 2 && !anyBisiesto(any) && dia>0 && dia<=28){
+			validarMes = true;
+			return validarMes;	
+		}
+	}		
+}
+
+//Función que valida los días del mes.
+
+function validarDia(dia){
+
+	var validarDia = false;
+	if(mes31Valido && dia>0 && dia<=31)
+	{
+		validarDia = true;
+		return validarDia;
+	}
+	else if(mes30Valido && dia>0 && dia<=30)
+	{
+		validarDia = true;
+		return validarDia;
+	}
+	else if(mes == 2 && anyBisiesto(any) && dia>0 && dia<=29){
+		validarDia = true;
+		return validarDia;
+	}
+	else if(mes == 2 && !anyBisiesto(any) && dia>0 && dia<=28){
+		validarDia = true;
+		return validarDia;
+	}
+	else{
+		validarDia = false;
+		return validarDia;
+	}
+}
+
+//Función para generar una fecha.
+
+function crearFecha(){
+	var dia=parseInt(prompt('Introduce el dia',''));
+	var mes=parseInt(prompt('Introduce el mes',''));
+	var any=parseInt(prompt('Introduce el año',''));
+	var f = new Date(mes + ' ' + dia + ' ' + any + ' ' + '10:05:03');
+	return f;
+}
+
+//Arrays de días y meses.
+
+var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var mesesIng = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
+// Se pide días, mes y año al usuario.
+
+var dia = parseInt(prompt('Introduce un día: ', ''));
+var mes = parseInt(prompt('Introduce un mes: ', ''));
+var any = parseInt(prompt('Introduce un año: ', ''));
+
+//Variable para validar el mes largo y corto.
+
+var mes31Valido = false;
+var mes30Valido = false;
+
+//Variable que permitirá introducir la segunda fecha sólo si es válida la primera.
+
+var seguirPrograma = false;
+
+//Arrayde días de meses largos y cortos.
+
+var mes31 = [1, 3, 5, 7, 8, 10, 12];
+var mes30 = [4, 6, 9, 11];
+
+//Se llama a la función de año bisiesto para comprobar si es el caso.
+
+var bisiesto = anyBisiesto(any);
+
+//Se llama a las funciones de validar meses y días.
+
+var mesCorrecto = validarMes(mes);
+var diaCorrecto = validarDia(dia);
+
+//Con este if se controla que tanto el mes como los días sean válidos.
+
+if(mesCorrecto && diaCorrecto){
+	document.write("Fecha correcta." + "<br><br>");
+	seguirPrograma = true;
+}else{
+	document.write("Error al introducir la fecha." + "<br><br>");
+}
+
+//En caso de seguir con el programa se entra a este if.
+
+if(seguirPrograma){
+
+	//Se genera una fecha con método Date().
+	var fecha = new Date(mes + ' ' + dia + ' ' + any + ' ' + '10:05:03');
+	document.write(fecha + "<br><br>");
+	//Se extrae eldía de la semana por medio del array dias.
+	document.write("Mostrar día de la semana: " + dias[fecha.getDay()] + "<br><br>");
+
+	//Se llama al método crearFecha() para que el usuario introduzca otra fecha.
+	var nuevaFecha = crearFecha();
+	document.write("--Segunda fecha: " + nuevaFecha + "<br><br>");
+
+	//Se comprueba que sea correcta con los mismos métodos que la primera fecha introducida.
+
+	var mesCorrecto2 = validarMes(mes);
+	var diaCorrecto2 = validarDia(dia);
+
+	//Si la fecha no es correcta volverá a pedir que el usuario la introduzca.
+	if(mesCorrecto2 && diaCorrecto2){
+		document.write("--Segunda fecha correcta." + "<br><br>");
+		//Este while controla si la fecha es posterior o no, si no lo es volverá a pedirla.
+		var nuevaFecha=crearFecha();
+		var fechaTotal = nuevaFecha-fecha;
+		while(fechaTotal<0){
+			var nuevaFecha=crearFecha();
+			document.write(nuevaFecha + "<br><br>");
+		}
+		if(fechaTotal>=0){
+				//Si es posterior muestra el día de la semana ydías transcurridos.
+				document.write("--La segunda fecha es mayor que la primera." + "<br><br>");
+				document.write("--Mostrar día de la semana de la segunda fecha: " + dias[fecha.getDay()+1] + "<br><br>");
+				document.write("--Número de días transcurridos: " + (nuevaFecha-fecha)/(1000*60*60*24));
+		}
+	}else{
+		document.write("Error al introducir la segunda fecha." + "<br><br>");
+	}
+}
+</script>
+</body>
+</html>

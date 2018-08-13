@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Expresiones regulares</title>
+
+<script type="text/javascript" src="jquery1.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<style type="text/css">
+
+		body{			
+			background: lightblue url("img/back.jpg") no-repeat fixed center; 
+		}
+
+		img{
+			width: 120px;
+			height: 80px;
+			float: left;
+			margin-top: 10px;
+			padding: 5px;
+		}
+
+		#textstyle{
+			font-family: Verdana, "Times New Roman", Times, serif;
+		    font-size: 20px;
+		    text-align: left;
+		    font-weight: bold;
+		    margin-left: 10px;
+		}
+
+		#contentstyle{
+			font-family: Verdana, "Times New Roman", Times, serif;
+		    font-size: 20px;
+		    text-align: left;
+		    margin-left: 10px;
+		}
+
+
+		.recuadro {
+			border-style: solid;
+			border-color: red;
+    		border-width: 5px;
+		}
+
+		.labelcolor {
+			color: red;
+		}
+
+		#head_style{	
+		    padding: 2px 2px;
+		    background: #f4f7f8;
+		    margin: 2px auto;
+		    border-radius: 8px;
+		    opacity: 0.8;
+   			filter: alpha(opacity=50);
+		}	
+
+		.sidebar{
+			float:left;
+			width: 20%;
+		}	
+
+		.menu_style{	
+		    padding: 5px 10px;
+		    background: #f4f7f8;
+		    margin: 10px auto;
+		    padding: 10px;
+		    border-radius: 8px;
+		    font-family: Verdana, "Times New Roman", Times, serif;		    
+		    opacity: 0.9;
+   			filter: alpha(opacity=50);
+		}
+
+		.content_style{	
+		    padding: 5px 10px;
+		    background: #f4f7f8;
+		    margin: 10px auto;
+		    padding: 10px;
+		    border-radius: 8px;
+		    font-family: Verdana, "Times New Roman", Times, serif;
+		    float: right;
+		    width: 76%;
+		    opacity: 0.9;
+   			filter: alpha(opacity=50);
+		}
+
+		.form_style{	
+		    padding: 5px 10px;
+		    background: #f4f7f8;
+		    margin: 10px auto;
+		    padding: 10px;
+		    border-radius: 8px;
+		    font-family: Verdana, "Times New Roman", Times, serif;
+		    opacity: 0.9;
+   			filter: alpha(opacity=50);
+		}
+
+		textarea {
+		    width: 98%;
+		    margin-left: 10px;
+		    font-size: 16px;
+		}
+		
+		label {
+		    margin-bottom: 10px;
+		}
+		
+		input {
+		    font-family: Verdana, "Times New Roman", Times, serif;
+		    background: rgba(255,255,255,.1);
+		    border: none;
+		    border-radius: 4px;
+		    font-size: 16px;
+		    margin: 0;
+		    outline: 0;
+		    padding: 2px;
+		    width: 100%;
+		    box-sizing: border-box; 
+		    -webkit-box-sizing: border-box;
+		    -moz-box-sizing: border-box; 
+		    background-color: #e8eeef;
+		    color:#8a97a0;
+		    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+		    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+		    margin-bottom: 1px;	
+		    margin-top: 5px;   
+		}
+		
+		
+		input:focus{
+		    background: #d2d9dd;
+		}
+
+		.form_style input[type="button"]{
+		    position: relative;
+		    display: block;
+		    padding: 19px 39px 18px 39px;
+		    color: #FFF;
+		    margin: 0 auto;
+		    background: #1abc9c;
+		    font-size: 18px;
+		    text-align: center;
+		    font-style: normal;
+		    width: 100%;
+		    border: 1px solid #16a085;
+		    border-width: 1px 1px 3px;
+		    margin-bottom: 10px;
+		}
+
+		.form_style input[type="button"]:hover{
+		    background: #109177;
+		}
+
+</style>
+</script>
+</head>
+<body>
+
+<div id="head_style">
+	<div><img src="img/bb.png"></div>
+	
+	<div>
+		<p id="textstyle">Práctica M6:</p>
+		<p id="textstyle">Formularios y expresiones regulares</p>
+	</div>
+</div>
+
+<div class="sidebar">
+	<div class="menu_style">
+		<ul>
+		<li>Inicio de la web</li>
+		<li>Quiénes somos</li>
+		<li>Descargar capítulos</li>
+		<li>Ver imágenes</li>
+		</ul>
+	</div>
+
+
+	<div class="form_style">
+		<form name="form1">
+			<label for="label1" id="label1-">Fecha (dd/mm/aaaa):</label>
+			</br> <input id="label1" type="text" name="fecha1"/> </br></br>
+			<label for="label2" id="label2-">Cocinero:</label>
+			</br> <input id="label2" type="text" name="cocinero2"/> </br></br>
+			<label for="label3" id="label3-">Destinatario:</label>
+			</br> <input id="label3" type="text" name="destinatario3"/> </br></br>
+			<label for="label4" id="label4-">Gramos:</label>
+			</br> <input id="label4" type="text" name="gramos4"/> </br></br>
+			<label for="label5" id="label5-">Composición:</label>
+			</br> <input id="label5" type="text" name="composicion5"/> </br></br>
+			<input type="button" class="form_style" name="oper1" id="boton1" value="Aceptar"/>
+		</form>
+	</div>
+</div>
+
+<div>
+	<div class="content_style">
+
+	<div id="area">
+    	<p id="contentstyle">Contenido del formulario:</p>
+    	<textarea id="textarea1" rows="5" cols="20" id="result" disabled="disabled"></textarea>
+    </div>
+
+	<p id="contentstyle">Leonel and Marco, two cartel killers known as the Cousins, travel from Mexico to avenge the death of their relative, Tuco Salamanca. "Family is all," their Tio told them as boys. Now aging and ailing, Tio directs them to eliminate Walt for his part in Tuco's demise.</p>
+
+	<p id="contentstyle">Wearing their trademark suits and cowboy boots tipped with silver skulls, the Cousins stride into Walt's house, a huge silver axe at the ready. Before they can attack him, they receive a one-word text message, "POLLOS," and abruptly withdraw.
+
+	The Cousins' cartel boss, Juan Bolsa, comes north for a meeting with Gus Fring. "Blood must be repaid by blood," Bolsa tells Gus, who requests that they postpone vengeance until his business with Walt is concluded. The Cousins silently seethe.</p>
+
+	<p id="contentstyle">For several days, the Cousins sit brooding in Gus's restaurant, Los Pollos Hermanos. When it's clear they will wait no longer, Gus arranges a meeting with them. He identifies Hank as Tuco's actual killer and grants an exception to the cartel prohibition against targeting DEA agents.
+
+	<p id="contentstyle">Hank receives a mysterious warning one minute before the Cousins ambush him. In the ensuing skirmish, Hank shoots Marco dead and gravely injures Leonel.</p>
+
+	<p id="contentstyle">Leonel is recuperating in the hospital following a double amputation of his legs when Walt stops by to get a look at Hank's would-be assassin. Recognizing his target, the Cousin throws himself out of bed and drags himself across the floor toward Heisenberg.
+
+	Later, after being subdued, Leonel flatlines. As hospital workers try in vain to resuscitate him, Gus's fixer Mike discards a syringe and slips away.</p>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+</head>
+<body> 
+<script language="javascript">
+
+//Ej 1
+
+/*
+	Por norma mejor hacerlo así, poner las comillas al final del prompt y después pasar a entero con parseInt() en caso de ser necesario tratar el dato como número entero.
+*/
+
+var lado;
+lado=prompt('Ingrese el lado: ','');
+document.write('<br>');
+document.write('Lado introducido: '+lado);
+document.write('<br>');
+var producto=parseInt(lado)+parseInt(lado);
+document.write('El resultado es: '+producto);
+document.write('<br><br>');
+
+//Ej 2
+
+var num1=prompt('Ingrese el número 1: ');
+document.write('<br>');
+document.write('Número 1 introducido: '+num1);
+var num2=prompt('Ingrese el número 2: ');
+document.write('<br>');
+document.write('Número 1 introducido: '+num2);
+var num3=prompt('Ingrese el número 3: ');
+document.write('<br>');
+document.write('Número 1 introducido: '+num3);
+var num4=prompt('Ingrese el número 4: ');
+document.write('<br>');
+document.write('Número 1 introducido: '+num4);
+document.write('<br>');
+var oper1 = num1+num2;
+var oper2 = num3*num4;
+document.write('El resultado de la operación 1: '+oper1);
+document.write('<br>');
+document.write('El resultado de la operación 2: '+oper2);
+document.write('<br><br>');
+//Ej 3
+
+var oper1 = num1+num2+num3+num4;
+var oper2 = num1*num2*num3*num4;
+document.write('El resultado de la operación de suma: '+oper1);
+document.write('<br>');
+document.write('El resultado de la operación de multiplicación: '+oper2);
+document.write('<br><br>');
+
+//Ej 4
+
+var precio=prompt('Ingrese el precio del producto: ');
+document.write('<br>');
+document.write('Precio introducido: '+precio);
+var cantidad=prompt('Ingrese la cantidad comprada: ');
+document.write('<br>');
+document.write('Cantidad introducida: '+cantidad);
+document.write('<br>');
+var total=precio*cantidad;
+document.write('Coste total del pedido: '+total);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Validar fecha</title>
+
+</head>
+<body>
+<script language="javascript">
+
+function anyBisiesto(any){
+	if(any%4==0 || (any%400==0 && any%100!=0)){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function validarMes(mes){
+
+	var validarMes = "";
+	for(var i=0; i<mes31.length;i++){
+		if(mes == mes31[i]){
+				mes31Valido = true;
+				return validarMes = "Mes largo. ";
+		}
+
+		if(mes == mes30[i]){
+				mes30Valido = true;
+				return validarMes = "Mes corto. ";
+		}		
+	}
+	
+	if(mes == 2){
+		if(anyBisiesto(any)){
+			return validarMes = "Febrero de 29 días. ";
+		}else{
+			return validarMes = "Febrero de 28 días. ";
+		}
+	}else{
+		if(anyBisiesto(any)){
+			return validarMes = "Año bisiesto. ";
+		}else{
+			return validarMes = "Año no bisiesto. ";
+		}
+	}
+}
+
+function validarDia(dia){
+
+	var validarDia = "";
+	if(mes31Valido && dia>0 && dia<=31)
+	{
+		validarDia = "Día correcto. ";
+		return validarDia;
+	}
+
+	else if(mes30Valido && dia>0 && dia<=30)
+	{
+		validarDia = "Día correcto. ";
+		return validarDia;
+	}
+
+	else if(mes == 2 && anyBisiesto(any) && dia>0 && dia<28){
+		validarDia = "Días de Febrero correctos. ";
+		return validarDia;
+	}
+
+	else if(mes == 2 && !anyBisiesto(any) && dia>0 && dia<28){
+		validarDia = "Días de Febrero incorrectos. ";
+		return validarDia;
+	}
+	else{
+		validarDia = "Error al inrtoducir el día.";
+		return validarDia;
+	}
+}
+
+var dia = parseInt(prompt('Introduce un día: ', ''));
+var mes = parseInt(prompt('Introduce un mes: ', ''));
+var any = parseInt(prompt('Introduce un año: ', ''));
+
+var mes31Valido = false;
+var mes30Valido = false;
+
+var mes31 = [1, 3, 5, 7, 8, 10, 12];
+var mes30 = [4, 6, 9, 11];
+
+var bisiesto = anyBisiesto(any);
+
+	if(bisiesto){
+		document.write("El año es bisiesto.");
+	}else{
+		document.write("El año no es bisiesto.");
+	}
+
+var mesCorrecto = validarMes(mes);
+document.write(" - " + mesCorrecto);
+
+var diaCorrecto = validarDia(dia);
+document.write(" - " + diaCorrecto);
+
+</script>
+</body>
+</html>

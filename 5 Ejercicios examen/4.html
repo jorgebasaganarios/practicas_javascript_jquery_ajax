@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Validar fecha</title>
+
+</head>
+<body>
+<script language="javascript">
+
+/*
+	Fes un programa ex4.html et demani un numero i et calculi el producte dels seus digits.
+*/
+
+var p = prompt('Introduce el número: ','');
+var total = 1;
+var numeros = [];
+
+for(var i=0; i<p.length; i++)
+{
+		var valor = parseInt(p[i]);
+		total = total * p[i];
+}
+document.write(total);
+
+</script>
+</body>
+</html>

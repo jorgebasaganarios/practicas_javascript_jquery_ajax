@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function cambiar(){
+			var texto1=document.form1.caja1.value;
+			var texto2=document.form1.caja2.value;
+			document.form1.caja1.value=texto2;
+			document.form1.caja2.value=texto1;
+		}
+		function abreWeb(){
+			var num=parseInt(Math.random()*3);;
+			switch (num){
+				case 0: window.location='http://www.marca.com';
+					break;
+				case 1: window.location='http://www.as.com';
+					break;
+				case 2:	window.location='http://www.quo.es';
+					break;
+			}
+		}
+
+
+		function muestra(){
+			switch (form1.desplegable.value){
+				case 'Renault':	document.getElementById("foto").src = "renault.jpg";
+								break;
+				case 'Seat': document.getElementById("foto").src = "seat.jpg";
+								break;
+				case 'Ford': document.getElementById("foto").src = "ford.jpg";
+								break;
+			}
+		}	
+	</script>
+	<title>Funciones en etiquetas</title>
+</head>
+<body>
+<!--Formulario simple -->
+	<form name="form1">
+		<input type="text" name="caja1"> <input type="text" name="caja2">
+		<input type="button" name="but1" onclick="cambiar()" value="Intercambia">
+		<br>
+		<select name="desplegable">
+			<option value="Renault">Renault</option>
+			<option value="Seat">Seat</option>
+			<option value="Ford">Ford</option>
+		</select>
+		<input type="button" name="but2" onclick="muestra()" value="Cambiame de coche">
+		
+	</form>
+	<br/>
+	<img id="foto">
+	<!-- Link -->
+	<br />
+	<a href="javascript:abreWeb()">Muestra pagina aleatoria</a>
+</body>
+</html>

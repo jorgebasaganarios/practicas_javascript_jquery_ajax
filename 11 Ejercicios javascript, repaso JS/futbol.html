@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Calculadora</title>
+<script type="text/javascript">
+
+	var jugadores = [];
+	var imc = 0;
+	var fcm = 0;
+
+	function crear(){
+
+		var dni=document.form1.dni1.value;
+		var nombre=document.form1.nombre2.value;
+		var edad=document.form1.edad3.value;
+		var peso=document.form1.peso4.value;
+		var altura=document.form1.altura5.value;
+
+		jugador = new Jugador();
+		jugador.crearJugador(dni, nombre, edad, peso, altura);
+		jugadores.push(jugador);
+		form1.reset();
+	}
+
+	function Jugador(dni, nombre, edad, peso, altura){
+
+		this.dni = "";
+		this.nombre = 0;
+		this.edad = 0;
+		this.peso = 0;
+		this.altura = 0;
+		this.jugadores = [];
+
+		this.crearJugador=function(dni, nombre, edad, peso, altura){
+			this.dni = dni;
+			this.nombre = nombre;
+			this.edad = edad;
+			this.peso = peso;
+			this.altura = altura;
+		}
+	}
+
+	function imprimir(){
+		for(var i=0; i<jugadores.length; i++){
+				document.write(jugadores[i].nombre + "<br>");
+		}
+	}
+
+	function calcularIMC(){		
+		var dniJugador = prompt('Introduce el dni del jugador: ', '');
+		for(var i=0; i<jugadores.length; i++){
+			if(dniJugador == jugadores[i].dni){
+				imc = jugadores[i].peso / jugadores[i].altura;
+				document.write("El IMC del jugador es: " + imc);
+
+				if(imc<16){
+					document.write("Delgadez Severa");
+				}else if(imc>16 && imc<16.99){
+					document.write("Infrapeso");
+				}else if(imc>17 && imc<18.49){
+					document.write("Infrapeso");
+				}else if(imc>18.50 && imc<24.99){
+					document.write("Peso normal");
+				}else if(imc>25 && imc<29.99){
+					document.write("Sobrepeso");
+				}else if(imc>30 && imc<34.55){
+					document.write("Obeso Tipo I");
+				}else if(imc>35 && imc<40){
+					document.write("Obeso Tipo II");
+				}else{
+					document.write("Obeso Tipo III");
+				}				
+			}else{
+				document.write("El DNI introducido no existe.");
+			}
+		}
+	}
+
+</script>
+</head>
+<body>
+<form name="form1">
+   DNI: </br> <input type="text" name="dni1"/> </br>
+   NOMBRE: </br> <input type="text" name="nombre2"/> </br>
+   FECHA: </br> <input type="text" name="fecha3"/> </br>
+   PESO: </br> <input type="text" name="peso4"/> </br>
+   ALTURA: </br> <input type="text" name="altura5"/>   
+   <p>
+		<input type="button" name="oper1" onclick="crear()" value="Crear jugador"/>
+		<input type="button" name="oper2" onclick="imprimir()" value="Mostrar jugadores"/>
+		<input type="button" name="oper3" onclick="calcularIMC()" value="Calcular IMC"/>
+   </p>
+</form>
+</body>
+</html>

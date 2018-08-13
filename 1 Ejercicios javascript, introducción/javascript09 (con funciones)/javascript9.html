@@ -1,0 +1,73 @@
+<html>
+<head>
+</head>
+<body> 
+<script language="javascript">
+
+
+//Ej 1 V2
+
+var contador = 0;
+var superficie;
+var sup = 0;
+var cnt = 0;
+var totalSup = 0;
+
+var numeros = prompt('Cuántos números vas a introducir: ', '');
+numeros = parseInt(numeros);
+
+while(contador < numeros){
+	var base = prompt('Insertar base '+(contador+1)+": ", '');
+	base=parseInt(base);
+	var altura = prompt('Insertar altura '+(contador+1)+": ", '');
+	altura=parseInt(altura);
+	contador ++;
+
+	document.write("Figura "+(contador));
+	document.write("<br>");
+
+	document.write("# Base: " + base + " / Altura: " + altura);
+	document.write("<br>");
+
+	superficie = calcularSup(base, altura);
+	document.write("Superficie: "+ superficie);
+	document.write("<br><br>");
+}
+
+totalSup = mayorSup();
+document.write("--El total de triángulos de superfície mayor a 12 es: " + totalSup);
+
+function calcularSup(base, altura){
+	sup = (base*altura)/2;
+	totalSup = mayorSup(sup);
+	return sup;
+}
+
+function mayorSup(sup){
+	if(sup>12){
+		cnt++;
+	}	
+	return cnt;
+}
+
+/*
+//Ej 4 V2
+
+var num;
+
+num=prompt('Insertar valor: ', '');
+num=parseInt(num);
+document.write("Tabla del " + num+": ");
+var tabla = tablaMultiplicar(num);
+
+function tablaMultiplicar(valor){
+	for(var i=0; i<11; i++){
+		var total = valor * (i);
+		document.write("<br>");
+		document.write(" - " + valor+" x "+ i + ": "+ total);
+	}
+}
+*/
+</script>
+</body>
+</html>

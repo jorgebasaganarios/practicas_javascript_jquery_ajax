@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Juego parejas</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
+	<script type="text/javascript" src="code.js"></script>
+</head>
+<body>
+<div>
+	<h1>Juego de memorización</h1>
+</div>
+
+<div>
+   	<table>
+	  <tr>
+		  <td style="width: 100px; height: 100px"><img name="1" src="img/0.png" id="1" style="width:100px; height: 100px"></td>
+		  <td style="width: 100px; height: 100px"><img name="2" src="img/0.png" id="2" style="width:100px; height: 100px"></td>
+		  <td style="width: 100px; height: 100px"><img name="3" src="img/0.png" id="3" style="width:100px; height: 100px"></td>
+		  <td style="width: 100px; height: 100px"><img name="4" src="img/0.png" id="4" style="width:100px; height: 100px"></td>
+	  </tr>
+
+	  <tr>
+		  <td style="width: 100px; height: 100px"><img name="5" src="img/0.png" id="5" style="width:100px; height: 100px"></td>
+		  <td style="width: 100px; height: 100px"><img name="6" src="img/0.png" id="6" style="width:100px; height: 100px"></td>
+		  <td style="width: 100px; height: 100px"><img name="1" src="img/0.png" id="7" style="width:100px; height: 100px"></td>
+		  <td style="width: 100px; height: 100px"><img name="2" src="img/0.png" id="8" style="width:100px; height: 100px"></td>
+	  </tr>
+
+	  <tr>
+		  <td style="width: 100px; height: 100px"><img name="3" src="img/0.png" id="9" style="width:100px; height: 100px"></td>
+		  <td style="width: 100px; height: 100px"><img name="4" src="img/0.png" id="10" style="width:100px; height: 100px"></td>
+		  <td style="width: 100px; height: 100px"><img name="5" src="img/0.png" id="11" style="width:100px; height: 100px"></td>
+		  <td style="width: 100px; height: 100px"><img name="6" src="img/0.png" id="12" style="width:100px; height: 100px"></td>
+	  </tr>
+	</table>
+</div>
+
+<div id="area">
+	<div id="area1">
+    	<p>Puntuación:</p>
+    	<textarea rows="1" cols="20" id="result" disabled="disabled"></textarea>
+    </div>
+    <div id="area2">
+    	<p>Nº de intentos:</p>
+    	<textarea rows="1" cols="20" id="try" disabled="disabled"></textarea>
+    </div>
+</div>
+
+<div id="area">
+	<div id="area1">
+		<input id="boton" type="button" name="oper2" onclick="window.parent.location.reload()" value="Reiniciar el Juego">
+	</div>
+</div>
+
+</body>
+</html>

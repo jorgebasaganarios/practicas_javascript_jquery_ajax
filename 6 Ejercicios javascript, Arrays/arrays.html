@@ -1,0 +1,52 @@
+<!-- Pràctica ARRAYS, Jorge Basagaña Rios -->
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="funciones.js"></script>
+</script>
+</head>
+<body>
+<script type="text/javascript">
+var opcionUsuario = -1;
+while(opcionUsuario != 0){
+		var opcionUsuario = pedirDatos();
+		switch(opcionUsuario){
+			case 1:
+					document.write('Cantidad de países: ' + mostrarCantidad() + '<br>');
+					break;
+			case 2:
+					var formaMostrar = parseInt(prompt(' 1. Por defecto. \n 2. Orden inverso. \n 3. Orden alfabético.'));
+					document.write('Lista de países: ' + mostrarElementos(formaMostrar) + '<br>');
+					break;
+			case 3:
+					var valor1 = parseInt(prompt('- Introduce el primer valor: ', ''));
+					var valor2 = parseInt(prompt('- Introduce el segundo valor: ', ''));
+					document.write('Inervalo de países: ' + mostrarIntervalo(valor1, valor2) + '<br>');
+					break;
+			case 4:
+					var nombrePais = prompt('- Introduce el nombre del país: ', '');
+					var indicePosicion = parseInt(prompt('- Introduce 1 para ubicar el país al principio. \n - Introduce 2 para ubicar el país al final.', ''));
+					if(indicePosicion == 1) posicion = 0;
+					if(indicePosicion == 2) posicion = paises.length;
+					agregaElemento(nombrePais, posicion) + '<br>';
+					document.write('Mostrar nuevos elementos: ' + mostrarElementos(1) + '<br>');
+					break;
+			case 5:
+					var nombrePais = prompt('- Introduce el nombre del país: ', '');
+					var indicePosicion = parseInt(prompt('- Introduce 1 para eliminar el país al principio. \n - Introduce 2 para eliminar el país al final.', ''));
+					eliminaElemento(nombrePais, indicePosicion) + '<br>';
+					document.write('Mostrar sin elementos eliminados: ' + mostrarElementos(1) + '<br>');
+					break;
+			case 6:
+					var porPosicion = prompt('- Introduce la posición: ', '');
+					var porNombre = prompt('- Introduce el nombre: ', '');
+					document.write('En ese índice se encuentra el país: ' + consultarPais(porPosicion) + '<br>');
+					document.write('Este país está en el índice: ' + consultarPais(porNombre) + '<br>');
+					break;
+			default:
+					break;
+		}
+}
+</script>
+</body>
+</html>

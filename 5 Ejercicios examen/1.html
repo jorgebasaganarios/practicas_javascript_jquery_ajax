@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Examen</title>
+
+</head>
+<body>
+<script language="javascript">
+
+/*
+
+	Fes un programa ex1.html que carrega dues llistes de tres valors. Informa amb un missatge dient quina de les dues llistes te un valor acumulat mes gran (Missatges: 'Llista 1 més gran', 'Llista 2 més gran, 'Llistes iguals’)
+
+*/
+
+var contador=0;
+var contador_llista1=0;
+var contador_llista2=0;
+
+while(contador < 2){
+	var valor1=prompt('Primer valor: ', '');
+	valor1=parseInt(valor1);
+	document.write("-Valor1: "+valor1+"<br>"); 
+	var valor2=prompt('Segundo valor: ', '');
+	valor2=parseInt(valor2);
+	document.write("-Valor2: "+valor2+"<br>"); 
+	var valor3=prompt('Tercer valor: ', '');
+	valor3=parseInt(valor3);
+	document.write("-Valor3: "+valor3+"<br>"); 
+
+	if(contador==0){
+		contador_llista1=valor1+valor2+valor3;
+		document.write("Total llista 1: "+contador_llista1+"<br>");
+	}else{
+		contador_llista2=valor1+valor2+valor3;
+		document.write("Total llista 2: "+contador_llista2+"<br>");
+	}
+	contador++;
+}
+
+if(contador_llista1>contador_llista2){
+	document.write("El valor acumulat més gran es de la llista de números 1: " + contador_llista1+"<br>");
+}else{
+	document.write("El valor acumulat més gran es de la llista de números 2: " + contador_llista2+"<br>");
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Validar fecha</title>
+
+</head>
+<body>
+<script language="javascript">
+
+var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var mesesIng = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
+var dia = parseInt(prompt("Introduce dia: "));
+var mes = parseInt(prompt("Introduce mes: "));
+var any = parseInt(prompt("Introduce any: "));
+
+//1-Modelo de impresión de fecha con formato por defecto.
+
+var fecha = new Date();
+document.write(fecha+'<br><br>');
+
+//2-Modelo de impresión de fecha con formato personalizado.
+
+//document.write(dias[fecha.getDay()+1] + ' ' + fecha.getDate() + ' de ' + meses[fecha.getMonth()] + ' del año ' + fecha.getFullYear());
+
+//3-Modelo de impresión de fecha con formato estándar por mediode un nuevo objeto Date.
+
+var fecha2 = new Date((mes-1) + ' ' + dia + ' ' + any + ' ' + '10:05:03');
+document.write(fecha2);
+
+</script>
+</body>
+</html>

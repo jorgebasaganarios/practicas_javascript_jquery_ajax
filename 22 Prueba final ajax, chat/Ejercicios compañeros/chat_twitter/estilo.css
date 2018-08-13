@@ -1,0 +1,14 @@
+.table{float: left; width: 62%; }
+.form-group{color: grey; font-family: Ebrina;}
+#createUser{float: left; width: 30%; margin-left: 8%;}
+#creaComent{float: left; width: 30%; margin-left: 8%;}
+#salir{float: left; width: 30%; margin-left: 8%;}
+p{font-family: italic; font-weight: bolder; color: brown;}
+#entrar{font-family: Ebrima; font-weight: bold;}
+#cabecera{display: flex; justify-content: right; font-family:cursive;} 
+label{font-family: Ebrima; font-weight: bold; color: grey;}
+#password{opacity: 0.5;}
+#user{opacity: 0.5;}
+#pass{opacity:0.5;}
+#name{opacity: 0.5;}
+#comentari{font-family: fantasy;}

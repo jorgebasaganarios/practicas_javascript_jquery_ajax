@@ -1,0 +1,59 @@
+<html>
+<head>
+</head>
+<body> 
+<script language="javascript">
+var numfilas=0;
+var numcol=0;
+var contador_numcol=0;
+var contador_numfilas=0;
+var i=0;
+var j=0;
+numfilas=prompt('Insertar número de filas: ', '');
+numfilas=parseInt(numfilas);
+numcol=prompt('Insertar número de columnas: ', '');
+numcol=parseInt(numcol);
+
+document.write('<table border="5">');
+	
+	
+	//Primero lo desarrollamos con WHILE.
+	while(contador_numfilas<numfilas)
+	{
+		document.write('<tr>');
+		contador_numfilas++;
+
+			while(contador_numcol<numcol)
+			{		
+				document.write('<td>');
+				document.write(numcol);
+				document.write('</td>');
+				contador_numcol++;
+			}
+		contador_numcol=0;
+		document.write('</tr>');
+		
+	}
+	
+
+	/*
+	//Lo desarrollamos también con FOR.
+	for(i=0;i<numfilas;i++)
+	{
+	document.write('<tr>');
+		for(j=0;j<numcol;j++)
+		{
+			document.write('<td>');
+			document.write(numfilas);
+			document.write('</td>');
+		}
+	document.write('</tr>');
+	}
+	*/
+
+document.write('</table>');
+
+</script>
+
+</body>
+</html>

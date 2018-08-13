@@ -1,0 +1,34 @@
+<html>
+<head>	
+	<script type="text/javascript">
+		//Obtener fecha actual y ver como trabaja el objeto Date
+		var fecha= new Date();
+		var mesesIng=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+		var dias=["Domingo","Lunes", "Martes", "Miércoles","Jueves","Viernes","Sabado"];
+		/*
+		document.write('<br>');
+		document.write(fecha.getDay());
+		document.write('<br>');
+		document.write(fecha.getDate());
+		document.write('<br>');
+		document.write(fecha.getMonth());
+		document.write('<br>');
+		document.write(fecha.getFullYear());
+		document.write('<br>');
+		*/
+		var dia=parseInt(prompt('Introduce el dia','')), mes=parseInt(prompt('Introduce el mes')), ano=parseInt(prompt('Introduce el año'));
+				
+		var f1 = new Date(mesesIng[mes-1] +' '+ dia +', '+ ano +' 01:15:00');
+		//document.write('<br>');
+		//document.write(dias[f1.getDay()]+' '+f1.getDate()+'/'+mesesIng[f1.getMonth()]+'/'+f1.getFullYear());
+		document.write(f1);
+	</script>
+
+	<title>
+
+	</title>
+</head>
+<body>
+
+</body>
+</html>

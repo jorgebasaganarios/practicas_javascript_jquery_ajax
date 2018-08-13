@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Examen</title>
+
+</head>
+<body>
+<script language="javascript">
+
+/*
+
+	Fes un programa ex2.html que demani un numero de 1 a 10 i mostri la taula de multiplicar d’aquell nombre.  S’ha de mostrar en una taula HTML
+
+*/
+
+num=prompt('Insertar valor: ', '');
+num=parseInt(num);
+document.write('<table border="5">');
+document.write("Tabla del " + num+": ");
+
+for(i=0;i<11;i++)
+	{
+	document.write('<tr>');
+		for(j=0;j<1;j++)
+		{
+			document.write('<td>');			
+			document.write(num+" x "+ i);
+			document.write('</td>');
+
+			document.write('<td>');
+			var total = num * (i);
+			document.write(total);
+			document.write('</td>');
+		}
+	document.write('</tr>');
+	}
+
+	document.write('</table>');
+
+</script>
+</body>
+</html>

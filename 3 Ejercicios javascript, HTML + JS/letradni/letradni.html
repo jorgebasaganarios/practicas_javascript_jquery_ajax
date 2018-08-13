@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Calculadora</title>
+
+</head>
+<body>
+<script language="javascript">
+
+var doc = prompt('Escribe un DNI: ', '');
+var letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+//var codigos = new Array();
+//Es más correcto definir el Array de la siguiente manera:
+var codigos = [];
+
+/*
+	// Llenar un Array de números con PUSH.
+	for(var i=0; i<23; i++){
+	codigos.push(parseInt(i));
+	}
+*/
+
+//CREAR ARRAY: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22].
+for(var i=0; i<23; i++){
+	codigos[i] = i;
+}
+
+/*
+	// Serviría para IMPRIMIR ARRAY.
+	for(var j=0; j<23; j++){
+	document.write(codigos[j]+" ");
+	}
+*/
+
+for(var i=0; i<23; i++){
+		if(doc%23 == codigos[i]){
+			document.write("La letra es: "+letras[i]);
+		}
+}
+
+</script>
+</body>
+</html>
